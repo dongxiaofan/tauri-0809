@@ -1,0 +1,87 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #fafafa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+#app {
+  width: 100%;
+  height: 100%;
+}
+.ant-layout-content{
+  background-color: #fafafa;
+  &.content-unfold{
+    padding-left: 80px;
+    .ant-layout-header{
+      width: calc(100% - 80px);
+    }
+    .customer-tabs-wrap{
+      width: calc(100% - 80px);
+    }
+  }
+  &.content-fold{
+    padding-left: 200px;
+    .ant-layout-header{
+      width: calc(100% - 200px);
+    }
+    .customer-tabs-wrap{
+      width: calc(100% - 200px);
+    }
+  }
+}
+
+.content-wrapper{
+  padding: 54px 16px 16px 16px;
+}
+
+// 全局页脚
+.layout-footer{
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  bottom: 0;
+  color: @layout-footer-color;
+  font-size: 14px;
+  p{
+    margin-bottom: 5px;
+  }
+  .police{
+    position: relative;
+    top: -3px;
+    margin-right: 5px;
+  }
+  .layout-footer-a{
+    color: @layout-footer-a-color;
+  }
+}
+
+// 登录页 页脚
+.login-footer{
+  width: 100%;
+  padding: 16px;
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  color: @login-footer-color;
+  font-size: 16px;
+  p{
+    margin-bottom: 5px;
+  }
+  .police{
+    position: relative;
+    top: -3px;
+    margin-right: 5px;
+  }
+  .login-footer-a{
+    color: @login-footer-color;
+  }
+}

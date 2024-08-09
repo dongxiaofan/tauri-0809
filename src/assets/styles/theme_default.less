@@ -1,0 +1,140 @@
+// 默认全局样式
+.default_layout_wrap{
+}
+
+// 默认登陆样式
+.default_login_wrap{
+  .container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('@/assets/images/theme/default/login_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .login_page_box{
+    width: 520px;
+    // height: 380px;
+    padding: 130px 60px 70px 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: relative;
+    left: 50%;
+    margin-left: -260px;
+    top: 50%;
+    margin-top: -190px;
+    .login-box-title{
+      width: 100%;
+      height: 90px;
+      line-height: 90px;
+      text-align: center;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      // border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+      // background-color: rgba(255, 255, 255, 0.07);
+      border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    .ant-form{
+      .ant-form-item{
+        min-height: 42px;
+        border-radius: 6px;
+        margin-bottom: 24px;
+        overflow: hidden;
+        .ant-form-item-control{
+          .ant-form-item-control-input{
+            .ant-form-item-control-input-content{
+              .iconfont{
+                width: 42px;
+                height: 42px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                text-align: center;
+                line-height: 42px;
+                color: @login-input-icon-color;
+                z-index: 1;
+                font-weight: bold;
+                background-color: #f8f8f9;
+                border: 1px solid #dcdee2;
+              }
+              .ant-input{
+                height: 42px;
+                padding-left: 56px;
+                border-radius: 6px;
+                color: @primary-color;
+                background-color: #fff !important;
+              }
+            }
+          }
+        } 
+        input::-webkit-input-placeholder{
+          font-size: 14px;
+        }
+        input:-moz-placeholder{
+          font-size: 14px;
+        }              
+        input::-moz-placeholder{
+          font-size: 14px;
+        }              
+        input:-ms-input-placeholder{
+          font-size: 14px;
+        } 
+      }
+    }
+  }
+  .submit-btn{
+    width: 100%;
+    height: 48px;
+    margin-top: 12px;
+    background: linear-gradient(140deg, #00eefe 0%, #00c6ff 30%, #0099ff 70%, #008aff);
+    border: none;
+    font-size: 18px;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    color: #fff;
+    &::before{
+      background-color: rgba(0,0,0,0);
+    }
+    &:hover{
+      opacity: .9;
+    }
+  }
+  .loginFooter{
+    color: #fff;
+    a{
+      .beian{
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+    }
+  }
+}
+
+
+/* 当设备宽度小于等于640px时应用以下样式 */
+@media screen and (max-width: 640px) {
+  .default_login_wrap{
+    .login_page_box{
+      width: 80%;
+      padding: 80px 30px 30px 30px;
+      left: 10%;
+      margin-left: 0;
+      top: 28%;
+      margin-top: 0;
+      .login-box-title{
+        height: 60px;
+        line-height: 60px;
+      }
+      .ant-form{
+        .ant-form-item{
+        }
+      }
+    }
+  }
+}

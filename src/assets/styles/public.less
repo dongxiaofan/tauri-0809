@@ -1,0 +1,452 @@
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+.font-size(80);
+.font-size(@n, @i: 12) when (@i =< @n) {
+  .font-@{i} {
+    font-size: @i + 0px !important;
+  }
+  .font-size(@n, (@i + 1));
+}
+
+.mt(100);
+.mt(@n, @i: 0) when (@i =< @n) {
+  .mt-@{i} {
+    margin-top: @i + 0px !important;
+  }
+  .mt(@n, (@i + 1));
+}
+
+.mb(100);
+.mb(@n, @i: 0) when (@i =< @n) {
+  .mb-@{i} {
+    margin-bottom: @i + 0px !important;
+  }
+  .mb(@n, (@i + 1));
+}
+
+.ml(100);
+.ml(@n, @i: 0) when (@i =< @n) {
+  .ml-@{i} {
+    margin-left: @i + 0px !important;
+  }
+  .ml(@n, (@i + 1));
+}
+
+.mr(100);
+.mr(@n, @i: 0) when (@i =< @n) {
+  .mr-@{i} {
+    margin-right: @i + 0px !important;
+  }
+  .mr(@n, (@i + 1));
+}
+
+.pall(100);
+.pall(@n, @i: 0) when (@i =< @n) {
+  .pall-@{i} {
+    padding: @i + 0px !important;
+  }
+  .pall(@n, (@i + 1));
+}
+.pt(100);
+.pt(@n, @i: 0) when (@i =< @n) {
+  .pt-@{i} {
+    padding-top: @i + 0px !important;
+  }
+  .pt(@n, (@i + 1));
+}
+.pb(100);
+.pb(@n, @i: 0) when (@i =< @n) {
+  .pb-@{i} {
+    padding-bottom: @i + 0px !important;
+  }
+  .pb(@n, (@i + 1));
+}
+.pr(100);
+.pr(@n, @i: 0) when (@i =< @n) {
+  .pr-@{i} {
+    padding-right: @i + 0px !important;
+  }
+  .pr(@n, (@i + 1));
+}
+.pl(100);
+.pl(@n, @i: 0) when (@i =< @n) {
+  .pl-@{i} {
+    padding-left: @i + 0px !important;
+  }
+  .pl(@n, (@i + 1));
+}
+.bg-fff{
+  background-color: #fff;
+}
+.w20{
+  width: 20px;
+}
+.w100{
+  width: 100px;
+}
+.w180{
+  width: 180px;
+}
+.w200{
+  width: 200px;
+}
+.w220{
+  width: 220px;
+}
+.w410{
+  width: 410px;
+}
+.w480{
+  width: 480px;
+}
+.w900{
+  width: 900px;
+}
+.w-100{
+  width: 100%;
+}
+.w-80{
+  width: 80%;
+}
+.max-w-100{
+  max-width: 100%;
+}
+.max-w-80{
+  max-width: 80%;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.text-fff{
+  color: #fff;
+}
+.text-gray-333{
+  color: #333;
+}
+.text-gray-666{
+  color: #666;
+}
+.text-gray-999{
+  color: #999;
+}
+.text-underline{
+  text-decoration: underline;
+}
+.text-tableRow-link {
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 5px;
+}
+.text-tableRow-btn {
+  cursor: pointer;
+  border: solid 1px @border-color-base;
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 3px 8px;
+}
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+
+.display-none {
+  display: none !important;
+}
+.display-inline {
+  display: inline !important;
+}
+.display-block {
+  display: block;
+}
+.display-inline-block{
+  display: inline-block;
+}
+.display-flex {
+  display: flex;
+}
+
+.text-info {
+  color: @primary-color;
+  &:hover{
+    color: @primary-color;
+    opacity: .8;
+  }
+}
+.text-success {
+  color: @success-color;
+}
+.text-warning {
+  color: @warning-color;
+}
+.text-error {
+  color: @error-color;
+}
+.font-weight{
+  font-weight: bold;
+}
+
+.line-h-28{
+  line-height: 28px;
+}
+
+.line-h-32{
+  line-height: 32px;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.pointer{
+  cursor: pointer;
+}
+
+// 自定义上传样式
+.customer-upload-wrap{
+  overflow: hidden;
+  .ant-upload-list{
+    display: none !important;
+  }
+  .ant-upload{
+    &.ant-upload-disabled{
+      .upload-button{
+        color: #999;
+        cursor: unset;
+        &:hover{
+          border-color: @border-color-base;;
+        }
+      }
+    }
+  }
+  .customer-img-sm{
+    width: 100px;
+    height: 100px;
+    float: left;
+    position: relative;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: all 0.3s;
+    background-color: #000;
+    .ant-image{
+      width: 100%;
+      height: 100%;
+      img{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity .3s;
+      }
+    }
+    &:hover{
+      .yulan,.shanchu{
+        opacity: 1;
+      }
+    }
+    .shanchu{
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      color: #fff;
+      opacity: 1;
+      cursor: pointer;
+      transition: opacity .3s;
+      background-color: rgba(0, 0, 0, .5);
+      .iconfont{        
+        font-size: 14px;
+      }
+    }
+  }
+  .customer-file-sm{
+    width: 100%;
+    height: 24px;
+    float: left;
+    position: relative;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: all 0.3s;
+    padding: 0 10px;
+    line-height: 24px;
+    &:hover{
+      background-color: rgba(0,0,0,.05);
+      .yulan,.shanchu{
+        opacity: 1;
+      }
+      .name{
+        color: @primary-color;
+      }
+    }
+    .icon-link{
+      float: left;
+      line-height: 24px;
+      svg{
+        position: relative;
+        top: 2px;
+        color: #999;
+      }
+    }
+    .name{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .shanchu{
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      color: rgba(0,0,0,.45);
+      opacity: 0;
+      cursor: pointer;
+      transition: opacity .3s;
+      .iconfont{        
+        font-size: 14px;
+      }
+    }
+  }
+  .customer-card-sm{
+    width: 222px;
+    height: 142px;
+    float: left;
+    position: relative;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: all 0.3s;
+    background-color: #000;
+    .ant-image{
+      width: 100%;
+      height: 100%;
+      img{
+        width: 222px;
+        height: 142px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity .3s;
+      }
+    }
+    &:hover{
+      .yulan,.shanchu{
+        opacity: 1;
+      }
+    }
+    .shanchu{
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      color: #fff;
+      opacity: 1;
+      cursor: pointer;
+      transition: opacity .3s;
+      background-color: rgba(0, 0, 0, .5);
+      .iconfont{        
+        font-size: 14px;
+      }
+    }
+  }
+  .upload-button{
+    width: 100px;
+    height: 100px;
+    float: left;
+    display: block;
+    border: dashed 1px @border-color-base;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding-top: 30px;
+    background-color: #fafafa;
+    &:hover{
+      border-color: @primary-color;
+    }
+  }
+  .upload-card-button{
+    width: 222px;
+    height: 142px;
+    float: left;
+    display: block;
+    border: dashed 1px @border-color-base;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    &:hover{
+      border-color: @primary-color;
+    }
+  }
+}
+
+// 仿照禁用输入框的样式
+.copy-disabled-input{
+  width: 100%;
+  height: 32px;
+  background-color: #f5f5f5;
+  border: solid 1px @border-color-base;
+  color: rgba(0,0,0,.25);
+  padding: 0 11px;
+  line-height: 30px;
+}
+// 仿照禁用输入框的样式(文字黑色)
+.copy-disabled-input_blackTxt{
+  .ant-input[disabled]{
+    color: rgba(0,0,0,.7);
+  }
+}
+.copy-disabled-input_blackTxt_div{
+  height: 32px;
+  background-color: #f5f5f5;
+  border: solid 1px @border-color-base;
+  color: rgba(0,0,0,.7);
+  padding: 0 11px;
+  line-height: 30px;
+}
+
+.table-index-number{
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;  
+  border-radius: 100%;
+  color: #fff;
+  font-size: 12px;
+  &.number-1{
+    background-color: #314659;
+  }
+  &.number-2{
+    background-color: #979797;
+  }
+}

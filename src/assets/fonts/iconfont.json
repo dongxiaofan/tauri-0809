@@ -1,0 +1,282 @@
+{
+  "id": "4407382",
+  "name": "安蚁零工",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1802972",
+      "name": "lock",
+      "font_class": "lock",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "8860643",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "34256818",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e75b",
+      "unicode_decimal": 59227
+    },
+    {
+      "icon_id": "20956498",
+      "name": "卡2",
+      "font_class": "ka2",
+      "unicode": "e746",
+      "unicode_decimal": 59206
+    },
+    {
+      "icon_id": "20956499",
+      "name": "zhifubiaoqian",
+      "font_class": "zhifubiaoqian",
+      "unicode": "e747",
+      "unicode_decimal": 59207
+    },
+    {
+      "icon_id": "32112907",
+      "name": "pingjiabiaoqian",
+      "font_class": "pingjiabiaoqian",
+      "unicode": "e757",
+      "unicode_decimal": 59223
+    },
+    {
+      "icon_id": "32112908",
+      "name": "yewubiaoqian",
+      "font_class": "yewubiaoqian",
+      "unicode": "e758",
+      "unicode_decimal": 59224
+    },
+    {
+      "icon_id": "32112909",
+      "name": "fengxianbiaoqian",
+      "font_class": "fengxianbiaoqian",
+      "unicode": "e759",
+      "unicode_decimal": 59225
+    },
+    {
+      "icon_id": "20459336",
+      "name": "完成",
+      "font_class": "Bill_Pay",
+      "unicode": "e728",
+      "unicode_decimal": 59176
+    },
+    {
+      "icon_id": "20494497",
+      "name": "生成对账单",
+      "font_class": "Bill_Build",
+      "unicode": "e73e",
+      "unicode_decimal": 59198
+    },
+    {
+      "icon_id": "20494518",
+      "name": "生成账单",
+      "font_class": "Bill_Add",
+      "unicode": "e73f",
+      "unicode_decimal": 59199
+    },
+    {
+      "icon_id": "20494519",
+      "name": "财务复核支付",
+      "font_class": "Bill_FinanceCheck",
+      "unicode": "e740",
+      "unicode_decimal": 59200
+    },
+    {
+      "icon_id": "21102842",
+      "name": "核对账单",
+      "font_class": "Bill_Check",
+      "unicode": "e86e",
+      "unicode_decimal": 59502
+    },
+    {
+      "icon_id": "21103022",
+      "name": "完工结算",
+      "font_class": "Bill_End",
+      "unicode": "e86f",
+      "unicode_decimal": 59503
+    },
+    {
+      "icon_id": "24183023",
+      "name": "财务申请付款",
+      "font_class": "Bill_FinanceApply",
+      "unicode": "e74b",
+      "unicode_decimal": 59211
+    },
+    {
+      "icon_id": "866503",
+      "name": "切换",
+      "font_class": "qiehuan",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "6282778",
+      "name": "退出",
+      "font_class": "tuichu",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "12323759",
+      "name": "警告",
+      "font_class": "jinggao",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "38545178",
+      "name": "退出全屏",
+      "font_class": "tuichuquanping",
+      "unicode": "e761",
+      "unicode_decimal": 59233
+    },
+    {
+      "icon_id": "38545179",
+      "name": "全屏",
+      "font_class": "quanping1",
+      "unicode": "e760",
+      "unicode_decimal": 59232
+    },
+    {
+      "icon_id": "1134100",
+      "name": "gongzuotai",
+      "font_class": "gongzuotai",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "4765891",
+      "name": "xitongshezhi",
+      "font_class": "xitongshezhi",
+      "unicode": "e78e",
+      "unicode_decimal": 59278
+    },
+    {
+      "icon_id": "4766299",
+      "name": "zhihuishuju",
+      "font_class": "zhihuishuju",
+      "unicode": "e7af",
+      "unicode_decimal": 59311
+    },
+    {
+      "icon_id": "4766464",
+      "name": "xiaoshouguanli",
+      "font_class": "xiaoshouguanli",
+      "unicode": "e7b5",
+      "unicode_decimal": 59317
+    },
+    {
+      "icon_id": "4766511",
+      "name": "fengxiankongzhi",
+      "font_class": "fengxiankongzhi",
+      "unicode": "e7c0",
+      "unicode_decimal": 59328
+    },
+    {
+      "icon_id": "4766773",
+      "name": "caishuiguanli",
+      "font_class": "caishuiguanli",
+      "unicode": "e7cd",
+      "unicode_decimal": 59341
+    },
+    {
+      "icon_id": "7239844",
+      "name": "zhongbaoguanli",
+      "font_class": "zhongbaoguanli",
+      "unicode": "e745",
+      "unicode_decimal": 59205
+    },
+    {
+      "icon_id": "13253867",
+      "name": "zhongbaobaoxian",
+      "font_class": "zhongbaobaoxian",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "702125",
+      "name": "clock",
+      "font_class": "clock",
+      "unicode": "e75c",
+      "unicode_decimal": 59228
+    },
+    {
+      "icon_id": "1115094",
+      "name": "zhifubao",
+      "font_class": "zhifubao",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "1330741",
+      "name": "huiyuanfazhanqushi",
+      "font_class": "huiyuanfazhanqushi",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "10001531",
+      "name": "mimadenglu",
+      "font_class": "mimadenglu",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    },
+    {
+      "icon_id": "10001547",
+      "name": "zhanghaodenglu",
+      "font_class": "zhanghaodenglu",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "10391700",
+      "name": "weixin",
+      "font_class": "weixin",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "12911865",
+      "name": "fujian",
+      "font_class": "fujian",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "14629161",
+      "name": "download",
+      "font_class": "download",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "18991776",
+      "name": "warning",
+      "font_class": "warning",
+      "unicode": "e88f",
+      "unicode_decimal": 59535
+    },
+    {
+      "icon_id": "20956935",
+      "name": "shanchu",
+      "font_class": "shanchu",
+      "unicode": "e74a",
+      "unicode_decimal": 59210
+    },
+    {
+      "icon_id": "34452981",
+      "name": "edit",
+      "font_class": "edit",
+      "unicode": "e839",
+      "unicode_decimal": 59449
+    }
+  ]
+}

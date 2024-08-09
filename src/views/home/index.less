@@ -1,0 +1,208 @@
+.home-wrap{
+  // padding: 24px;
+}
+.home-left{
+  padding-right: 8px;
+}
+.home-right{
+  padding-left: 8px;
+}
+
+.home-title{
+  margin-bottom: 10px;
+  padding-left: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  color: @text-color;
+  line-height: 22px;
+  &:after{
+    content: "";
+    width: 4px;
+    height: 12px;
+    background-color: @primary-color;
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    margin-top: -6px;
+  }
+  a{
+    float: right;
+    font-size: 12px;
+    color: @link-color-default;
+    position: relative;
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 16px;
+    &:hover{
+      color: @link-color-hover;
+    }
+    &::after{
+      content: "\e75b";
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+.home-block{
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.xtjy-cont{
+  width: 400px;
+  height: 150px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  padding: 15px 30px 0 30px;
+  position: relative;
+  &.jyje{
+    background-image: url('@/assets/images/home/jiaoyi_jije.png');
+  }
+  &.bishu{
+    background-image: url('@/assets/images/home/jiaoyi_bishu.png');
+  }
+  .xtjy-txt-1{
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .xtjy-txt-2{
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .xtjy-txt-3{
+    height: 50px;
+    border-top: 1px solid #eee;
+    line-height: 49px;
+  }
+}
+.ywsj-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .ywsj-item{
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    .item-round{
+      width: 120px;
+      height: 120px;
+      position: relative;
+      &:hover{
+        .item-txt{
+          color: @primary-color;
+        }
+      }
+    }
+    .item-img{
+      width: 120px;
+      height: 120px;
+    }
+    .item-txt{
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      line-height: 15px;
+      font-size: 12px;
+      left: 0;
+      bottom: 24px;
+      color: rgba(0,0,0,.65);
+    }
+    .item-num{
+      width: 100%;
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 200;
+      line-height: 36px;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
+
+.home-block-xtxx{
+  height: calc(100% - 10px);
+  position: relative;
+}
+.xtxx-cont{
+  width: 100%;
+  height: calc(100% - 70px);
+  position: absolute;
+  top: 50px;
+  overflow: hidden;
+  ul{
+    width: calc(100% - 30px);
+    height: 100%;
+    overflow-y: scroll;
+    padding-left: 16px;
+    li.xtxx-item{
+      padding-bottom: 20px;
+      position: relative;
+      &:after{
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: #f0f0f0;
+        position: absolute;
+        z-index: 1;
+        top: 5px;
+        left: 4px;
+      }
+      &:last-child{
+        &::after{
+          display: none;
+        }
+      }
+      p{
+        margin-bottom: 0;
+        padding-left: 20px;
+      }
+      .item-txt1{
+        font-weight: bold;
+        position: relative;
+        z-index: 9;
+        &:after{
+          content: "";
+          width: 10px;
+          height: 10px;
+          border: solid 2px @primary-color;
+          border-radius: 10px;
+          position: absolute;
+          left: 0;
+          top: 6px;
+          background-color: #fff;
+          z-index: 11;
+        }
+      }
+      .item-txt2{
+        color: #999;
+      }
+    }
+    /* 滚动条样式 */
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      background-color: #d8d8d8;
+    }
+    // 滚动条里面的小方块
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+    // 滚动条的轨道
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #bbb;
+    }
+  }
+}

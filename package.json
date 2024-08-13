@@ -31,6 +31,7 @@
     "@types/node": "^22.1.0",
     "@types/store": "^2.0.5",
     "@vitejs/plugin-vue": "^5.0.5",
+    "clipboard": "^2.0.11",
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
     "vue-tsc": "^2.0.22"

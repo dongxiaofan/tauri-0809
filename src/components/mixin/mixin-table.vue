@@ -437,7 +437,7 @@ const queryTableData = () => {
   dataSource.selectedIdArr = [];
   dataSource.selectedObjArr = [];
   let paramObj:any = {
-    current: dataSource.pageIndex,
+    pageIndex: dataSource.pageIndex,
     pageSize: dataSource.pageSize,
   }
   if (props.tableConfig?.hasSorter) {
@@ -502,14 +502,14 @@ const queryTableData = () => {
   }).then((resp:any) => {
     console.log('🐟queryTableData: ', resp)
     tableLoading.value = false;
-    if (resp.returnStatus) {
+    if (resp.success) {
       // if (props.tableConfig?.rowKeyIsIndex) {
       //   resp.data.map((_row:any, _index:number) => {
       //     _row.serialNumber = _index + 1
       //   })
       // }
       dataSource.tableData = resp.data;      
-      dataSource.totalRows = resp.total;
+      dataSource.totalRows = resp.totalRows;
       tableData(resp)
     } else {
       message.error(resp.message || '错误')
@@ -718,7 +718,7 @@ const handleExport = (btnConfig:any, sourceData:any) => {
         link.href = objectUrl
         link.click()
       }
-    } else if (resp.returnStatus) {
+    } else if (resp.success) {
       let backUrl = btnConfig.backUrlSource == 'data' ? resp.data : resp.message
       console.log('返回链接: ', baseUrl+backUrl)
       window.open(baseUrl+backUrl, '_blank')
@@ -850,7 +850,7 @@ const immediatelyFn = (btnConfig:any, sourceData:any) => {
   })
   .then((resp:any) => {
     console.log('resp: ', resp)
-    if (resp.returnStatus) {
+    if (resp.success) {
       message.success(resp.message ? resp.message : '操作成功')
     } else {
       message.error(resp.message)

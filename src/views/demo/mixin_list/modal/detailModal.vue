@@ -10,7 +10,7 @@
   >
     <div class="xq-title">连接信息</div>
     <div class="xq-cont">
-      <p>申请时间：{{ detailInfo.createDate }}</p>
+      <p>合作类型：{{ detailInfo.type }}</p>
       <p>绑定手机号：{{ detailInfo.phone }}</p>
       <p>IP白名单：</p>
       <div class="ip-box mb-10" v-show="ipList && ipList.length > 0">
@@ -28,7 +28,7 @@
 
     <div class="xq-title">验收报告</div>
     <div class="xq-cont">
-      <p>提交时间：{{ detailInfo.acceptanceFileModel?.createDate }}</p>
+      <p>提交时间：{{ detailInfo.acceptanceFileModel?.type }}</p>
       <p>查看文件：<a className=' a-underline text-info' @click="downLoadFile(detailInfo.acceptanceFileModel.originalName, detailInfo.acceptanceFileModel.url)">{{detailInfo.acceptanceFileModel?detailInfo.acceptanceFileModel.originalName:''}}</a></p>
     </div>
 
@@ -72,7 +72,7 @@ const handleOk = () => {
 // 获取详情信息
 const GetDetail = () => {
   ServiceApi.GetDetail({id: parentRow.id}).then(resp => {
-    if (resp.returnStatus) {
+    if (resp.success) {
       detailInfo = resp.data;
       ipList.value = resp.data.ipList;
     } else {

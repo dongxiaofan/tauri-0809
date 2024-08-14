@@ -11,14 +11,14 @@
             :rules="rules"
             autocomplete="off"
           >
-            <a-form-item name="userName">
+            <a-form-item name="UserName">
               <i class="iconfont icon-user"></i>
-              <a-input v-model:value="formLogin.userName" placeholder="请输入用户名">
+              <a-input v-model:value="formLogin.UserName" placeholder="请输入用户名">
               </a-input>
             </a-form-item>
-            <a-form-item name="userPwd">
+            <a-form-item name="Password">
               <i class="iconfont icon-lock"></i>
-              <a-input v-model:value="formLogin.userPwd" type="password" placeholder="请输入密码">
+              <a-input v-model:value="formLogin.Password" type="password" placeholder="请输入密码">
               </a-input>
             </a-form-item>
             <a-button type="primary" class="submit-btn" :loading="loading" @click="handleSubmit">登 录</a-button>
@@ -41,28 +41,25 @@ import ServiceApi from './service';
 import { message } from 'ant-design-vue';
 import dayjs from 'dayjs';
 
-const VITE_FOOTER_GS = import.meta.env.VITE_FOOTER_GS
-const VITE_FOOTER_JSZC = import.meta.env.VITE_FOOTER_JSZC
-const VITE_FOOTER_ICP = import.meta.env.VITE_FOOTER_ICP
-const VITE_FOOTER_YX = import.meta.env.VITE_FOOTER_YX
-const VITE_FOOTER_XGWAB = import.meta.env.VITE_FOOTER_XGWAB
+const VITE_MODE_ENV = import.meta.env.VITE_MODE_ENV;
 const login_class = import.meta.env.VITE_LOGIN_CLASSNAME
 const formRef = ref();
 const { commit, dispatch } = useStore()
 const loading = ref<boolean>(false)
 
 interface FormLoginType {
-  userName: string;
-  userPwd: string;
+  UserName: string;
+  Password: string;
 }
 const formLogin: UnwrapRef<FormLoginType> = reactive({
-  userName: 'admin',
-  userPwd: '123456',
+	TenantId: VITE_MODE_ENV == 'dev' ? "momo" : "anyi",
+	UserName: "admin",
+  Password: "mmkj201509",
 })
 
 const rules = {
-  userName: [{ required: true, message: '请输入用户名', trigger: 'change' }],
-  userPwd: [{ required: true, message: '请输入密码', trigger: 'change' }],
+  UserName: [{ required: true, message: '请输入用户名', trigger: 'change' }],
+  Password: [{ required: true, message: '请输入密码', trigger: 'change' }],
 }
 
 const handleSubmit = () => {
@@ -71,15 +68,9 @@ const handleSubmit = () => {
     loading.value = false;
   }, 3000);
   formRef.value.validate().then(() => {
+      console.log('033333333333333')
     dispatch('user/login', formLogin).then((resp:any) => {
-      const menuCodeArr = resp.data.menuList.map((_i:any) => _i.menuCode);
-      let menu_module = menuRouter.find((_p:any) => (menuCodeArr.indexOf(_p.meta.access) > -1));
-      let menu_parent = menu_module.children ? menu_module.children.find((_c:any) => menuCodeArr.indexOf(_c.meta.access) > -1) : null;
-      let menu_item = {};
-      let currentMenuItem = menu_parent ? (menu_parent.children ? getMenu(menu_parent.children, menu_item, menuCodeArr) : menu_parent) : menu_module;
-      commit('tabs/setTabList', currentMenuItem)
-      router.push(currentMenuItem.path)
-      getKeepAliveNameArr()
+      router.push('home')
     }).catch((err:any) => {
       console.log('login page err: ', err)
     })
@@ -124,17 +115,8 @@ const getKeepAliveNameArr = () => {
   commit('global/setKeepAliveName', newArr)
 }
 
-const getRSAFn = () => {
-  ServiceApi.getRSA({}).then((res:any) => {
-    console.log('res: ', res)
-    Cookies.set('KeyStr', res.data.KeyStr)
-    Cookies.set('rasStr', res.data.rasStr)
-  }).catch((e) => {})
-}
-
 onMounted(() => {
   storage.clearAll()
   commit('tabs/delAllTab')
-  getRSAFn()
 });
 </script>

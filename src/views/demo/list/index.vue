@@ -17,8 +17,8 @@
         </a-form-item>
       </div>
       <div class="ant-col ant-col-6">
-        <a-form-item label="社会信用代码：" name="payTaxesCode">
-          <a-input v-model:value="formData.payTaxesCode" />
+        <a-form-item label="社会信用代码：" name="simpleName">
+          <a-input v-model:value="formData.simpleName" />
         </a-form-item>
       </div>
       <a-button type="primary" html-type="submit" class="ml-10">查询</a-button>
@@ -48,7 +48,7 @@
           </div>
           <!-- 表头右边 -->
           <div class="table-title-right pull-right">
-            <a-button>导出</a-button>
+            <!-- <a-button>导出</a-button> -->
           </div>
         </div>
       </template>
@@ -85,7 +85,7 @@ import { listThead } from './columns.js';
 const formRef = ref();
 const formData = reactive<any>({
   clientName: '',
-  payTaxesCode: ''
+  simpleName: ''
 })
 
 // 列表数据
@@ -128,9 +128,9 @@ const queryTableData = () => {
   }
   ServiceApi.getList(params).then((resp:any) => {
     tableLoading.value = false;
-    if (resp.returnStatus) {
+    if (resp.success) {
       dataSource.tableData = resp.data
-      dataSource.totalRows = resp.total
+      dataSource.totalRows = resp.totalRows
     } else {
       message.error('no')
     }

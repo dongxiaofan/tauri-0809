@@ -28,7 +28,7 @@ const { state, commit } = useStore()
 const route = useRoute()
 const router = useRouter()
 const menuCodes = JSON.parse(localStorage.getItem('menuCodes') as any);
-const authCodeMenus = menuCodes.map((_m:any) => _m.menuCode);
+const authCodeMenus = menuCodes.map((_m:any) => _m.code);
 
 const props = defineProps({
   ...Menu.SubMenu.props,

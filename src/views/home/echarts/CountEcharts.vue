@@ -16,7 +16,7 @@ const name = '交易笔数'
 //  获取交易金额和交易笔数(近30天)
 const GetTrading30 = () => {
   ServiceApi.GetTrading30({}).then((res:any) => {
-    if (res.returnStatus) {
+    if (res.success) {
       let arr_day:any = [],
           arr_amount:any = [],
           arr_recharge:any = [],

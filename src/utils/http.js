@@ -60,85 +60,12 @@ const codeMessage = {
 
 // request请求拦截
 http.interceptors.request.use(config => {
-  // console.log('http.js request config: ', config)
-  if (config.url?.indexOf('UserBack/GetRSA') != -1) {
-    return config
-  } else {
-    //判断token是否存在，存在则向请求头添加token信息
-    if (Cookies.get('token')) {
-      config.headers['Authorization'] = 'Bearer ' + Cookies.get('token') || ''
-    }
-    let KeyStr = Cookies.get('KeyStr') || ''
-    let rasStr = Cookies.get('rasStr') || ''
-    if (!KeyStr || !rasStr) {
-      window.location.href = '/login';
-      Cookies.remove('token')
-      storage.clearAll()
-    }
-    let rsaRes = null
-    encrypt.setPublicKey(rasStr);
-    let str = encodeURIComponent(JSON.stringify([config.data]))
-    let tempArr = []
-    console.log(`%c 🌲 接口: ${config.url}， 发送的原始数据：${JSON.stringify([config.data])} `, 'color:#333;background:rgba(82,196,26,.3)')
-    if (str.length < 100) { // 转码后的字符串长度小于100时，不需要循环，直接加密
-      // 加密转码后的字符串并放到中括号里面
-      rsaRes = [encrypt.encrypt(str)]
-    } else { // 转码后的字符串长度大于100时，转为数组且加密
-      let num = Math.ceil(str.length / 100)
-      for (var i = 0; i < num; i++) {
-        var strCut = str.substring(100 * (i), 100 * (i+1));
-        // 加密后存入数组
-        tempArr.push(encrypt.encrypt(strCut));
-      }
-      rsaRes = tempArr
-    }
-
-    let params = {
-      keyStr: KeyStr,
-      decryptstring: rsaRes
-    }
-
-    // 如果包含上传文件files
-    let files = config.data.files ? config.data.files : null
-    let file = config.data.file ? config.data.file : null
-    const formDataParams = new FormData()
-    if (files) {
-      formDataParams.append('keyStr', KeyStr)
-      if (files instanceof Array) {
-        files.map(item => {
-          formDataParams.append('files', item)
-        });
-      } else {
-        formDataParams.append('files', files)
-      }
-      if (rsaRes.length) {
-        rsaRes.map((item, index) => {
-          formDataParams.append('decryptstring[' + index + ']', item)
-        })
-      }
-    }
-
-    if (file) {
-      formDataParams.append('keyStr', KeyStr)
-      formDataParams.append('file', file)
-      if (rsaRes.length) {
-        rsaRes.map((item, index) => {
-          formDataParams.append('decryptstring[' + index + ']', item)
-        })
-      }
-    }
-
-    let tempData = files||file ? formDataParams : params
-   
-    if (config.method == 'get') {
-      config.params = tempData
-    } else {
-      config.data = tempData
-    }
-
-    config.headers['Authorization'] = 'Bearer ' + Cookies.get('token') || ''    
-    return config
+  //判断token是否存在，存在则向请求头添加token信息
+  if (Cookies.get('token')) {
+    config.headers['Authorization'] = 'Bearer ' + Cookies.get('token') || ''
   }
+  // config.headers['Authorization'] = 'Bearer ' + Cookies.get('token') || ''    
+  return config
 }, errorHandler)
 
 // response响应拦截

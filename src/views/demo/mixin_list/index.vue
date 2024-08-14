@@ -65,7 +65,7 @@ const handleShenHe = (record:any) => {
     title: `确认通过“${record?.clientName}”的对接申请吗？通过审核后将生成连接信息。`,
     onOk: () => {
       ServiceApi.Audit({id: record.id}).then((resp:any) => {
-        if (resp.returnStatus) {
+        if (resp.success) {
           message.success(resp.message || '操作成功')
           searchFn()
           setTimeout(() => {

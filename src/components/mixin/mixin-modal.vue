@@ -131,7 +131,7 @@ const getModel = (row:any) => {
     data: formConfig?.getModelConfig.method == 'post' ? paramObj || null : null,
   })
   .then((resp:any) => {
-    if (resp.status === 200 && resp.returnStatus) {
+    if (resp.status === 200 && resp.success) {
       setTimeout(() => {
         MixinFormRef.value.getFormValOnRow(resp.data)
       });
@@ -165,7 +165,7 @@ const handleOk = () => {
       data: formConfig?.actionConfig.method == 'post' ? testMergeParams || null : null,
     }).then((resp:any) => {
       console.log('handleOk: ', resp)
-      if (resp.returnStatus) {
+      if (resp.success) {
         isShowModal.value = false;
         message.success(resp.message || '操作成功')
       } else {

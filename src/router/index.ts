@@ -17,7 +17,7 @@ const notFound = '/404' // 没找到页面
 
 router.beforeEach((to, from, next) => {
   // 当前菜单权限码
-  const currentMenu = storage.get('loginInfo')?.menuList.find((item: any) => {
+  const currentMenu = storage.get('loginInfo')?.menus.find((item: any) => {
     return item.menuCode === to.meta.access
   })
   console.log('⭐ currentMenu： ', currentMenu)

@@ -8,7 +8,7 @@ const demoModule = {
     title: '范例',
     icon: 'icon-pingjiabiaoqian',
     hideInMenu: false,
-    access: 'vCode'
+    // access: '_home'
   },
   component: RouterView,
   children: [
@@ -19,7 +19,7 @@ const demoModule = {
         title: '组件列表',
         icon: 'icon-pingjiabiaoqian',
         hideInMenu: false,
-        access: 'sys_openAPI',
+        // access: '_home',
         keepAlive: true,
       },
       component: ()=>import('@/views/demo/mixin_list/index.vue')
@@ -31,7 +31,7 @@ const demoModule = {
         title: '普通列表',
         icon: 'icon-pingjiabiaoqian',
         hideInMenu: false,
-        access: 'vCode',
+        // access: '_home',
         keepAlive: true,
       },
       component: ()=>import('@/views/demo/list/index.vue')
@@ -43,7 +43,7 @@ const demoModule = {
         title: '地图操作',
         icon: 'icon-pingjiabiaoqian',
         // hideInMenu: false,
-        access: 'vCode',
+        // access: '_home',
         keepAlive: true,
       },
       component: ()=>import('@/views/demo/useMap/index.vue')

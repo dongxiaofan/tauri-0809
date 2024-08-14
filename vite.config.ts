@@ -28,8 +28,7 @@ export default defineConfig(async ({mode, command}) => ({
     },
     proxy: {
       '/api': {
-        target: 'http://192.168.10.113:8033/api', // 安蚁测试环境
-        // target: loadEnv(mode, __dirname).VITE_FILE_URL,
+        target: loadEnv(mode, __dirname).VITE_FILE_URL,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }

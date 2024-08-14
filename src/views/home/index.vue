@@ -113,30 +113,19 @@
           <div class="xtxx-cont">
             <ul>
               <li class="xtxx-item" v-for="item of msgList">
-                <p class="item-txt1 ellipsis">{{ item.BulletinSynopsis }}</p>
-                <p class="item-txt2 ellipsis">{{ item.VersionNumber }}</p>
-                <p class="item-txt2">{{ item.CreateTime }}</p>
+                <p class="item-txt1 ellipsis">{{ item.operateByName }}</p>
+                <p class="item-txt2 ellipsis">{{ item.title }}</p>
+                <p class="item-txt2">{{ item.operateOn }}</p>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="home-block">
-      <div class="ant-row">
-        <div class="ant-col ant-col-12">
-          <AmountDay />
-        </div>
-        <div class="ant-col ant-col-12">
-          <CountEcharts />
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- 合同预警弹窗 -->
-  <HeTongYuJingModal ref="heTongYuJingModalRef" />
+  <!-- <HeTongYuJingModal ref="heTongYuJingModalRef" /> -->
 </template>
 
 <script lang="ts" setup>
@@ -144,13 +133,13 @@ import { ref, reactive, onMounted } from "vue";
 import { useRoute, useRouter } from 'vue-router';
 import AmountDay from './echarts/AmountDay.vue';
 import CountEcharts from './echarts/CountEcharts.vue';
-import HeTongYuJingModal from './modal/heTongYuJingModal.vue';
+// import HeTongYuJingModal from './modal/heTongYuJingModal.vue';
 import ServiceApi from './service';
 const route = useRoute()
 const router = useRouter()
 console.log('route.query： ', route.query)
 
-let msgList = reactive([] as any[]) // 系统消息列表
+let msgList = ref([] as any[]) // 系统消息列表
 let allAmount = ref<number>(0.00) // 累计交易金额
 let allCount = ref<number>(0) // 累计交易笔数
 let todayAmount = ref<number>(0) // 今日交易金额
@@ -191,18 +180,10 @@ let contractShow = ref<boolean>(false) // 合同到期预警
 
 // 获取系统消息列表
 const getBulletinList = () => {
-  ServiceApi.GetBulletinList({current:1,pageSize:10}).then((res:any) => {
-    if(res.returnStatus&&res.returnStatus==1){
-      msgList = res.data
+  ServiceApi.GetLogger({pageIndex:1,pageSize:10}).then((res:any) => {
+    if(res.success){
+      msgList.value = res.data
       console.log('获取系统消息列表: ', msgList)
-      // msgList = res.data.map((_i:any) => {
-      //   return {
-      //     BulletinSynopsis: _i.BulletinSynopsis,
-      //     VersionNumber: _i.VersionNumber,
-      //     CreateTime: _i.CreateTime
-      //   }
-      // })
-      // console.log('获取系统消息列表: ', msgList)
     }
   })
 }
@@ -265,10 +246,10 @@ const handleHeTongYuJing = () => {
 }
 
 onMounted(() => {
-  GetTradingAmount()
+  // GetTradingAmount()
   getBulletinList()
-  GetBusinessData()
-  GetFinancialData()
+  // GetBusinessData()
+  // GetFinancialData()
 });
 </script>
 

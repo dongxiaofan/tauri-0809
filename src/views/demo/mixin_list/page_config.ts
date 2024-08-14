@@ -4,21 +4,21 @@ import {Tooltip} from "ant-design-vue";
 const listThead = [
   {
     title: '客户名称',
-    dataIndex: 'clientName',
+    dataIndex: 'name',
     ellipsis: true
   },
   {
-    title: '统一社会信用代码',
-    dataIndex: 'payTaxesCode',
+    title: '客户简称',
+    dataIndex: 'simpleName',
   },
   {
-    title: '申请时间',
-    dataIndex: 'createDate',
+    title: '合作类型',
+    dataIndex: 'type',
 
   },
   {
     title: '绑定手机号',
-    dataIndex: 'phone',
+    dataIndex: 'hrContactPhone',
   },
   {
     title: '操作',
@@ -41,21 +41,21 @@ export const tableConfig = {
   tableColumns: listThead,
   scroll: {x: 1000},
   query: {
-    url: '/api/VerifyKey/GetPageList',
+    url: '/api/Customer/List',
     method: 'post',
     params: [
       { valueSource: 'default', dataTransform: [] }
     ],
   },
   selectedKey: 'id',
-  headTotals: [],
+  headTotals: [{name: '合计', key: 'totalRows', unit: '条', value: 0}],
   headButtons: [],
   rowButtons: [
     {
       name: '审核',
       type: 'primary',
       fn: 'handleShenHe',
-      hasAuthCode: true,
+      hasAuthCode: false,
       authCode: 'sys_openAPI_audit',
       actionCode: 'modal',
       actionParams: [{
@@ -69,7 +69,7 @@ export const tableConfig = {
       name: '详情',
       type: 'primary',
       fn: 'handleDetail',
-      hasAuthCode: true,
+      hasAuthCode: false,
       authCode: 'sys_openAPI_detail',
       actionCode: 'modal',
       actionParams: [{

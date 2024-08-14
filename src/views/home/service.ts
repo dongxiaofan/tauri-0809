@@ -46,9 +46,9 @@ export default class ServiceApi {
     })
   }
   // 公告
-  static GetBulletinList (params:any) {
+  static GetLogger (params:any) {
     return http({
-      url: '/api/Bulletin/GetBulletinList',
+      url: '/api/WorkBench/GetLogger',
       method: 'post',
       data: params
     })

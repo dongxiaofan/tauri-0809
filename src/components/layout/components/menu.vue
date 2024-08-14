@@ -41,7 +41,7 @@ const sysName = computed(() => {return state.user.name})
 const route = useRoute()
 const router = useRouter()
 const menuCodes = JSON.parse(localStorage.getItem('menuCodes') as any);
-const authCodeMenus = menuCodes.map((_m:any) => _m.menuCode);
+const authCodeMenus = menuCodes.map((_m:any) => _m.code);
 
 // 是否折叠
 const collapsed = computed(() => {return state.menu.collapsed})

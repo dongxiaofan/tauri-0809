@@ -99,7 +99,7 @@ const handleUpload = () => {
     method: 'post',
     data: {files: fileList.value[0]},
   }).then((resp:any) => {
-    if (resp.returnStatus) {
+    if (resp.success) {
       message.success(resp.message || '操作成功！');
       isShowMixinImportModal.value = false;
     } else {

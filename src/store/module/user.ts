@@ -76,14 +76,14 @@ const user = {
     login (context:ActionContext, params:any) {
       return new Promise((resolve, reject) => {
         AccountApi.login(params).then((resp: any) => {
-          if (resp.returnStatus) {
+          if (resp) {
             message.success(resp.message || '成功')
             const data = resp.data
             storage.set('loginInfo', data)
-            context.commit('setToken', data.toKen)
-            context.commit('setName', data.userName)
-            context.commit('setLoginId', data.id)
-            context.commit('setMenuCodes', data.menuList || [])
+            context.commit('setToken', data.access_token)
+            context.commit('setName', data.name)
+            context.commit('setLoginId', data.userId)
+            context.commit('setMenuCodes', data.menus || [])
           } else {
             message.error(resp.message)
           }
